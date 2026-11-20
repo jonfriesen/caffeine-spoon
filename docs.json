@@ -1,0 +1,307 @@
+[
+  {
+    "Command": [],
+    "Constant": [],
+    "Constructor": [],
+    "Deprecated": [],
+    "Field": [],
+    "Function": [],
+    "Method": [
+      {
+        "def": "Caffeine:bindHotkeys(mapping)",
+        "desc": "Binds the toggle hotkey. Bind before `start()` to enable it on start, or call while running to replace it immediately.",
+        "doc": "Binds the toggle hotkey. Bind before `start()` to enable it on start, or call while running to replace it immediately.\n\nParameters:\n * mapping - A table containing hotkey modifier/key details for the following items:\n  * toggle - Toggles display sleep prevention and cancels any active duration timer.\n\nReturns:\n * The Caffeine object",
+        "name": "bindHotkeys",
+        "notes": [],
+        "parameters": [
+          " * mapping - A table containing hotkey modifier/key details for the following items:",
+          "  * toggle - Toggles display sleep prevention and cancels any active duration timer.",
+          ""
+        ],
+        "returns": [
+          " * The Caffeine object"
+        ],
+        "signature": "Caffeine:bindHotkeys(mapping)",
+        "stripped_doc": [
+          "Binds the toggle hotkey. Bind before `start()` to enable it on start, or call while running to replace it immediately.",
+          ""
+        ],
+        "type": "Method"
+      },
+      {
+        "def": "Caffeine:start()",
+        "desc": "Starts Caffeine and shows the menu bar icon. If already running, stops the current session first.",
+        "doc": "Starts Caffeine and shows the menu bar icon. If already running, stops the current session first.\n\nParameters:\n * None\n\nReturns:\n * The Caffeine object",
+        "name": "start",
+        "notes": [],
+        "parameters": [
+          " * None",
+          ""
+        ],
+        "returns": [
+          " * The Caffeine object"
+        ],
+        "signature": "Caffeine:start()",
+        "stripped_doc": [
+          "Starts Caffeine and shows the menu bar icon. If already running, stops the current session first.",
+          ""
+        ],
+        "type": "Method"
+      },
+      {
+        "def": "Caffeine:stop()",
+        "desc": "Stops the watcher, removes the menu bar item, disables the hotkey, and cancels any timer.",
+        "doc": "Stops the watcher, removes the menu bar item, disables the hotkey, and cancels any timer.\nReleases display sleep prevention only if Caffeine enabled it. The hotkey binding is kept for the next start.\n\nParameters:\n * None\n\nReturns:\n * The Caffeine object",
+        "name": "stop",
+        "notes": [],
+        "parameters": [
+          " * None",
+          ""
+        ],
+        "returns": [
+          " * The Caffeine object"
+        ],
+        "signature": "Caffeine:stop()",
+        "stripped_doc": [
+          "Stops the watcher, removes the menu bar item, disables the hotkey, and cancels any timer.",
+          "Releases display sleep prevention only if Caffeine enabled it. The hotkey binding is kept for the next start.",
+          ""
+        ],
+        "type": "Method"
+      },
+      {
+        "def": "Caffeine:setState(on)",
+        "desc": "Sets display sleep prevention and cancels any active duration timer. Requires `start()`.",
+        "doc": "Sets display sleep prevention and cancels any active duration timer. Requires `start()`.\n\nParameters:\n * on - A boolean, true if screens should be kept awake, false to let macOS send them to sleep\n\nReturns:\n * None",
+        "name": "setState",
+        "notes": [],
+        "parameters": [
+          " * on - A boolean, true if screens should be kept awake, false to let macOS send them to sleep",
+          ""
+        ],
+        "returns": [
+          " * None"
+        ],
+        "signature": "Caffeine:setState(on)",
+        "stripped_doc": [
+          "Sets display sleep prevention and cancels any active duration timer. Requires `start()`.",
+          ""
+        ],
+        "type": "Method"
+      },
+      {
+        "def": "Caffeine:enableForDuration(seconds)",
+        "desc": "Keeps the display awake for a specified duration, replacing any active timer. Requires `start()`.",
+        "doc": "Keeps the display awake for a specified duration, replacing any active timer. Requires `start()`.\nOn expiry, releases display sleep prevention only if Caffeine enabled it.\n\nParameters:\n * seconds - Number of seconds to keep Caffeine enabled\n\nReturns:\n * None",
+        "name": "enableForDuration",
+        "notes": [],
+        "parameters": [
+          " * seconds - Number of seconds to keep Caffeine enabled",
+          ""
+        ],
+        "returns": [
+          " * None"
+        ],
+        "signature": "Caffeine:enableForDuration(seconds)",
+        "stripped_doc": [
+          "Keeps the display awake for a specified duration, replacing any active timer. Requires `start()`.",
+          "On expiry, releases display sleep prevention only if Caffeine enabled it.",
+          ""
+        ],
+        "type": "Method"
+      },
+      {
+        "def": "Caffeine:cancelTimer()",
+        "desc": "Cancels any active duration timer without changing display sleep prevention. Safe to call when stopped.",
+        "doc": "Cancels any active duration timer without changing display sleep prevention. Safe to call when stopped.\n\nParameters:\n * None\n\nReturns:\n * None",
+        "name": "cancelTimer",
+        "notes": [],
+        "parameters": [
+          " * None",
+          ""
+        ],
+        "returns": [
+          " * None"
+        ],
+        "signature": "Caffeine:cancelTimer()",
+        "stripped_doc": [
+          "Cancels any active duration timer without changing display sleep prevention. Safe to call when stopped.",
+          ""
+        ],
+        "type": "Method"
+      },
+      {
+        "def": "Caffeine:buildMenu()",
+        "desc": "Builds the menu bar dropdown. Building it does not require `start()`, but invoking its actions does.",
+        "doc": "Builds the menu bar dropdown. Building it does not require `start()`, but invoking its actions does.\n\nParameters:\n * None\n\nReturns:\n * A table containing the menu items",
+        "name": "buildMenu",
+        "notes": [],
+        "parameters": [
+          " * None",
+          ""
+        ],
+        "returns": [
+          " * A table containing the menu items"
+        ],
+        "signature": "Caffeine:buildMenu()",
+        "stripped_doc": [
+          "Builds the menu bar dropdown. Building it does not require `start()`, but invoking its actions does.",
+          ""
+        ],
+        "type": "Method"
+      }
+    ],
+    "Variable": [],
+    "desc": "Keep the display awake until you turn Caffeine off, lock the screen, or a timer expires.",
+    "doc": "Keep the display awake until you turn Caffeine off, lock the screen, or a timer expires.",
+    "items": [
+      {
+        "def": "Caffeine:bindHotkeys(mapping)",
+        "desc": "Binds the toggle hotkey. Bind before `start()` to enable it on start, or call while running to replace it immediately.",
+        "doc": "Binds the toggle hotkey. Bind before `start()` to enable it on start, or call while running to replace it immediately.\n\nParameters:\n * mapping - A table containing hotkey modifier/key details for the following items:\n  * toggle - Toggles display sleep prevention and cancels any active duration timer.\n\nReturns:\n * The Caffeine object",
+        "name": "bindHotkeys",
+        "notes": [],
+        "parameters": [
+          " * mapping - A table containing hotkey modifier/key details for the following items:",
+          "  * toggle - Toggles display sleep prevention and cancels any active duration timer.",
+          ""
+        ],
+        "returns": [
+          " * The Caffeine object"
+        ],
+        "signature": "Caffeine:bindHotkeys(mapping)",
+        "stripped_doc": [
+          "Binds the toggle hotkey. Bind before `start()` to enable it on start, or call while running to replace it immediately.",
+          ""
+        ],
+        "type": "Method"
+      },
+      {
+        "def": "Caffeine:buildMenu()",
+        "desc": "Builds the menu bar dropdown. Building it does not require `start()`, but invoking its actions does.",
+        "doc": "Builds the menu bar dropdown. Building it does not require `start()`, but invoking its actions does.\n\nParameters:\n * None\n\nReturns:\n * A table containing the menu items",
+        "name": "buildMenu",
+        "notes": [],
+        "parameters": [
+          " * None",
+          ""
+        ],
+        "returns": [
+          " * A table containing the menu items"
+        ],
+        "signature": "Caffeine:buildMenu()",
+        "stripped_doc": [
+          "Builds the menu bar dropdown. Building it does not require `start()`, but invoking its actions does.",
+          ""
+        ],
+        "type": "Method"
+      },
+      {
+        "def": "Caffeine:cancelTimer()",
+        "desc": "Cancels any active duration timer without changing display sleep prevention. Safe to call when stopped.",
+        "doc": "Cancels any active duration timer without changing display sleep prevention. Safe to call when stopped.\n\nParameters:\n * None\n\nReturns:\n * None",
+        "name": "cancelTimer",
+        "notes": [],
+        "parameters": [
+          " * None",
+          ""
+        ],
+        "returns": [
+          " * None"
+        ],
+        "signature": "Caffeine:cancelTimer()",
+        "stripped_doc": [
+          "Cancels any active duration timer without changing display sleep prevention. Safe to call when stopped.",
+          ""
+        ],
+        "type": "Method"
+      },
+      {
+        "def": "Caffeine:enableForDuration(seconds)",
+        "desc": "Keeps the display awake for a specified duration, replacing any active timer. Requires `start()`.",
+        "doc": "Keeps the display awake for a specified duration, replacing any active timer. Requires `start()`.\nOn expiry, releases display sleep prevention only if Caffeine enabled it.\n\nParameters:\n * seconds - Number of seconds to keep Caffeine enabled\n\nReturns:\n * None",
+        "name": "enableForDuration",
+        "notes": [],
+        "parameters": [
+          " * seconds - Number of seconds to keep Caffeine enabled",
+          ""
+        ],
+        "returns": [
+          " * None"
+        ],
+        "signature": "Caffeine:enableForDuration(seconds)",
+        "stripped_doc": [
+          "Keeps the display awake for a specified duration, replacing any active timer. Requires `start()`.",
+          "On expiry, releases display sleep prevention only if Caffeine enabled it.",
+          ""
+        ],
+        "type": "Method"
+      },
+      {
+        "def": "Caffeine:setState(on)",
+        "desc": "Sets display sleep prevention and cancels any active duration timer. Requires `start()`.",
+        "doc": "Sets display sleep prevention and cancels any active duration timer. Requires `start()`.\n\nParameters:\n * on - A boolean, true if screens should be kept awake, false to let macOS send them to sleep\n\nReturns:\n * None",
+        "name": "setState",
+        "notes": [],
+        "parameters": [
+          " * on - A boolean, true if screens should be kept awake, false to let macOS send them to sleep",
+          ""
+        ],
+        "returns": [
+          " * None"
+        ],
+        "signature": "Caffeine:setState(on)",
+        "stripped_doc": [
+          "Sets display sleep prevention and cancels any active duration timer. Requires `start()`.",
+          ""
+        ],
+        "type": "Method"
+      },
+      {
+        "def": "Caffeine:start()",
+        "desc": "Starts Caffeine and shows the menu bar icon. If already running, stops the current session first.",
+        "doc": "Starts Caffeine and shows the menu bar icon. If already running, stops the current session first.\n\nParameters:\n * None\n\nReturns:\n * The Caffeine object",
+        "name": "start",
+        "notes": [],
+        "parameters": [
+          " * None",
+          ""
+        ],
+        "returns": [
+          " * The Caffeine object"
+        ],
+        "signature": "Caffeine:start()",
+        "stripped_doc": [
+          "Starts Caffeine and shows the menu bar icon. If already running, stops the current session first.",
+          ""
+        ],
+        "type": "Method"
+      },
+      {
+        "def": "Caffeine:stop()",
+        "desc": "Stops the watcher, removes the menu bar item, disables the hotkey, and cancels any timer.",
+        "doc": "Stops the watcher, removes the menu bar item, disables the hotkey, and cancels any timer.\nReleases display sleep prevention only if Caffeine enabled it. The hotkey binding is kept for the next start.\n\nParameters:\n * None\n\nReturns:\n * The Caffeine object",
+        "name": "stop",
+        "notes": [],
+        "parameters": [
+          " * None",
+          ""
+        ],
+        "returns": [
+          " * The Caffeine object"
+        ],
+        "signature": "Caffeine:stop()",
+        "stripped_doc": [
+          "Stops the watcher, removes the menu bar item, disables the hotkey, and cancels any timer.",
+          "Releases display sleep prevention only if Caffeine enabled it. The hotkey binding is kept for the next start.",
+          ""
+        ],
+        "type": "Method"
+      }
+    ],
+    "name": "Caffeine",
+    "stripped_doc": [],
+    "submodules": [],
+    "type": "Module"
+  }
+]
